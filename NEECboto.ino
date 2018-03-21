@@ -15,8 +15,6 @@ Servo reader;
 
 int leftDistance, rightDistance; //distances on either side
 int curDist = 0;
-String motorSet = "";
-int speedSet = 0;
 
 //-------------------------------------------- SETUP LOOP ----------------------------------------------------------------------------
 void setup() {
@@ -32,7 +30,7 @@ void setup() {
 void loop() {
   reader.write(90);  // move eyes forward
   delay(90);
-  curDist = readPing();   // read distance
+  curDist = readPing();   // read current distance
   if (curDist < COLL_DIST) {changePath();}  // if forward is blocked change direction
   moveForward();  // move forward
   delay(500);
